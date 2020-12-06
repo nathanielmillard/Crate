@@ -16,6 +16,8 @@ import userRoutes from '../../setup/routes/user'
 import { logout } from './api/actions'
 
 // Component
+// This is a functional component that renders the user's profile page. 
+// The Helmet element allows anything in the <head> tag to be managed per page. This helps to have a more dynamic head and helps with SEO. 
 const Profile = (props) => (
   <div>
     {/* SEO */}
@@ -52,7 +54,7 @@ Profile.propTypes = {
   logout: PropTypes.func.isRequired
 }
 
-// Component State
+// Component State: Is this a mapStateToProps function? 
 function profileState(state) {
   return {
     user: state.user
