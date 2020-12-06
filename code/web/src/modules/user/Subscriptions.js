@@ -16,9 +16,12 @@ import EmptyMessage from '../common/EmptyMessage'
 import SubscriptionItem from '../subscription/Item'
 
 // Component
+// This is a class component and more specifically a Pure Component. This means that this component will only render once and doesn't need to re-render just because other associated pages re-render. 
+// This component renders a list of the user's subscriptions based on mapping through the list
 class Subscriptions extends PureComponent {
 
   // Runs on server only for SSR
+  // Fetches the list data for map on line 60
   static fetchData({ store }) {
     return store.dispatch(getListByUser())
   }
@@ -74,7 +77,7 @@ Subscriptions.propTypes = {
   getListByUser: PropTypes.func.isRequired
 }
 
-// Component State
+// Component State -- mapStateToProps
 function subscriptionsState(state) {
   return {
     subscriptions: state.subscriptionsByUser
