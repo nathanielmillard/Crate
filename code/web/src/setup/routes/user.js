@@ -5,6 +5,7 @@ import Profile from '../../modules/user/Profile'
 import Subscriptions from '../../modules/user/Subscriptions'
 
 // User routes
+// These are various routes/paths and the components that are rendered based on the user's click. 
 export default {
   login: {
     path: '/user/login',
