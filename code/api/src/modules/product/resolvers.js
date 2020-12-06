@@ -3,6 +3,7 @@ import params from '../../config/params'
 import models from '../../setup/models'
 
 // Get all products
+// This method will get all products and sort them via descending order by their ID
 export async function getAll() {
   return await models.Product.findAll({ order: [['id', 'DESC']] })
 }
@@ -20,6 +21,7 @@ export async function getBySlug(parentValue, { slug }) {
 }
 
 // Get product by ID
+// This method grabs a product by it's ID, unless one isn't found, in which case an error is thrown.
 export async function getById(parentValue, { productId }) {
   const product = await models.Product.findOne({ where: { id: productId } })
 
@@ -32,17 +34,20 @@ export async function getById(parentValue, { productId }) {
 }
 
 // Get related products
+// This method seems to be grabbing all related products to a specific one product but it looks like it's using product ID as a way to dicern whether or not a product is 'related', rather than it's style or material or type
 export async function getRelated(parentValue, { productId }) {
   return await models.Product.findAll({
     where: {
       id: { [models.Sequelize.Op.not]: productId }
     },
+    // the 'limit' says I only want to return 3 products
     limit: 3,
     order: [[models.Sequelize.fn('RAND')]] // mock related products by showing random products
   })
 }
 
 // Create product
+// This creates a product and requires; name, slug (?), description, type, gender, image. It also requires the User to have a role of 'admin'
 export async function create(parentValue, { name, slug, description, type, gender, image }, { auth }) {
   if(auth.user && auth.user.role === params.user.roles.admin) {
     return await models.Product.create({

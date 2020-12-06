@@ -10,6 +10,8 @@ import models from '../../setup/models'
 // Create
 export async function create(parentValue, { name, email, password }) {
   // Users exists with same email check
+  // This is a 'register user' function.
+  // 'const user =' defines a variable 'user' as a SQL/GraphQL query of finding a specific User using an email. If a User isn't found, they are created (lines 20 - 24). If a User is found, an error is thrown.
   const user = await models.User.findOne({ where: { email } })
 
   if (!user) {
@@ -29,7 +31,7 @@ export async function create(parentValue, { name, email, password }) {
 
 export async function login(parentValue, { email, password }) {
   const user = await models.User.findOne({ where: { email } })
-
+  // This function checks if a User of the specific email (with the corresponding password) exists. If a User isn't found, an error is thrown. If the wrong password is entered, a different error is thrown
   if (!user) {
     // User does not exists
     throw new Error(`We do not have any user registered with ${ email } email address. Please signup.`)

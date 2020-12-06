@@ -1,6 +1,7 @@
 'use strict'
 
 // Product
+// This is where the product table is defined, with it's specific attributes and what type those attributes should be
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('products', {
     name: {
