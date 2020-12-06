@@ -11,6 +11,7 @@ export const userInitialState = {
 }
 
 // State
+// These reducers update the state of the user in terms of various login/logout options
 export default (state = userInitialState, action) => {
   switch (action.type) {
     case SET_USER:
