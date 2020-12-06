@@ -19,11 +19,18 @@ import SubscriptionItem from '../subscription/Item'
 class Subscriptions extends PureComponent {
 
   // Runs on server only for SSR
+
+  // The static keyword allows react to get the values of propTypes and 
+  // defaultProps, without initializing your component.
+
+  // The static keyword allows react to get the values of propTypes and defaultProps, without initializing your component.
+  // dispatch(action) Dispatches an action. This is the only way to trigger a state change.
   static fetchData({ store }) {
     return store.dispatch(getListByUser())
   }
 
   // Runs on client only
+  //gets a list of subscriptions by user
   componentDidMount() {
     this.props.getListByUser()
   }
@@ -69,12 +76,14 @@ class Subscriptions extends PureComponent {
 }
 
 // Component Properties
+// will show a warning if subscriptions and getListByUser isn't present
 Subscriptions.propTypes = {
   subscriptions: PropTypes.object.isRequired,
   getListByUser: PropTypes.func.isRequired
 }
 
 // Component State
+// returns a single user's subscriptions based on who is signed in 
 function subscriptionsState(state) {
   return {
     subscriptions: state.subscriptionsByUser

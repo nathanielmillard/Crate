@@ -11,6 +11,8 @@ export const userInitialState = {
 }
 
 // State
+// ?? would like more clarification on this section
+// Need to ask classmate about this to learn more.
 export default (state = userInitialState, action) => {
   switch (action.type) {
     case SET_USER:

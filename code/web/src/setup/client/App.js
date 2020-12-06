@@ -8,6 +8,7 @@ import Layout from '../../modules/common/Layout'
 import NotFound from '../../modules/common/NotFound'
 import RoutePrivate from '../../modules/auth/RoutePrivate'
 
+//Not sure if/how this will need to be changed in order to add our functionality. 
 const App = () => (
   <Layout>
     <Switch>

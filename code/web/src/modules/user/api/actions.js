@@ -26,6 +26,7 @@ export function setUser(token, user) {
 }
 
 // Login a user using credentials
+// .dispatch(action) Dispatches an action. This is the only way to trigger a state change.
 export function login(userCredentials, isLoading = true) {
   return dispatch => {
     dispatch({

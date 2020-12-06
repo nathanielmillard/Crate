@@ -16,6 +16,8 @@ import userRoutes from '../../setup/routes/user'
 import { logout } from './api/actions'
 
 // Component
+// This is the Profile component. This is where the personal description, image, 
+// e-mail address, shipping address, and order history will be added. 
 const Profile = (props) => (
   <div>
     {/* SEO */}
@@ -47,12 +49,14 @@ const Profile = (props) => (
 )
 
 // Component Properties
+// isRequired will show a warning if this prop isn't provided.
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired
 }
 
 // Component State
+// returns the user object 
 function profileState(state) {
   return {
     user: state.user
