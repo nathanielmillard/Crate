@@ -1,7 +1,9 @@
 'use strict'
 
 // User
+//This is where the user attributes are stated and what data type they're defined as
 module.exports = function(sequelize, DataTypes) {
+//Sequelize makes sure we can access all of these attributes in our database through GraphQL
   let User = sequelize.define('users', {
     name: {
       type: DataTypes.STRING
@@ -16,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-
+//This is where we create our relationship between users and subscriptions
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }

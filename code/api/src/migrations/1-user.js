@@ -1,4 +1,6 @@
+//This file creates our User table in the database
 module.exports = {
+//The 'up' tells us what attributes our table is going to include after we run the migration
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('users', {
       id: {
@@ -29,6 +31,7 @@ module.exports = {
       }
     });
   },
+//The 'down' tells us what we would like our User migration to look like if we decide to 'roll back' aka make a change to our migration.
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('users');
   }
