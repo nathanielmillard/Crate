@@ -1,7 +1,21 @@
+//This file contains all actions that pertain to a user
+//We will need to update this file with new actions
+  //that allow a user to change their profile information
+  //we'll need to make a POST request with the updated info 
+  //to update the user in the database w/ new
+    //photo/personal description/email address/shipping address/delivery date
+  //If user doesn't update anything then use initial state
+
+
+
 // Imports
 import axios from 'axios'
+//axios is a Promise-based Http client for JavaScript 
 import { query, mutation } from 'gql-query-builder'
+//A simple helper function to generate GraphQL queries 
+  //using plain JavaScript Objects (JSON)
 import cookie from 'js-cookie'
+//handles cookies (user info)
 
 // App Imports
 import { routeApi } from '../../../setup/routes'
@@ -13,6 +27,15 @@ export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
 
 // Actions
+
+//The following are all functions that create actions
+  //Each action has type & payload properties
+  //The action type communicates to the reducer what part of state to update
+  //have to dispatch the action to the reducer
+  //with a type & payload that contains the data (user details) to update
+
+//We'll need actions to update photo, description, shipping address, & delivery date
+
 
 // Set a user after login or using localStorage token
 export function setUser(token, user) {
