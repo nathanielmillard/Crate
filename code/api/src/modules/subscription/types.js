@@ -10,6 +10,9 @@ const SubscriptionType = new GraphQLObjectType({
   name: 'subscription',
   description: 'Subscription Type',
 
+  //I think we will need to add a new field for delivery date
+  //We should check with backend on this
+
   fields: () => ({
     id: { type: GraphQLInt },
     user: { type: UserType },
