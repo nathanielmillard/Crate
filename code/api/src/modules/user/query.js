@@ -47,3 +47,6 @@ export const userGenders = {
   type: new GraphQLList(UserGenderType),
   resolve: getGenders
 }
+
+//I think this is where we would create queries to get the 
+  //photo/description/shipping address/delivery date availability

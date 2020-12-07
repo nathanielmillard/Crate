@@ -51,6 +51,9 @@ export async function create(parentValue, { crateId }, { auth }) {
   }
 }
 
+//Edit Subscription
+  //I think this is where we edit the subscription delivery date
+
 // Delete subscription
 export async function remove(parentValue, { id }, { auth }) {
   if(auth.user && auth.user.id > 0) {

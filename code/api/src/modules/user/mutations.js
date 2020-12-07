@@ -27,6 +27,9 @@ export const userSignup = {
   resolve: create
 }
 
+//We will need to create graphQL mutations to edit:
+//photo/description/shipping address/delivery date availability
+
 // Remove
 export const userRemove = {
   type: UserType,
