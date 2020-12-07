@@ -23,6 +23,8 @@ if (token && token !== 'undefined' && token !== '') {
 }
 
 // Client App
+
+//Provider is allowing the App component to have access to the store
 const Client = () => (
   <Provider store={store} key="provider">
     <Router>
