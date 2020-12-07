@@ -25,7 +25,7 @@ import AuthCheck from '../auth/AuthCheck'
 
 // Component
 class Signup extends Component {
-
+//basic class based signup component
   constructor(props) {
     super(props)
 
@@ -47,9 +47,11 @@ class Signup extends Component {
     this.setState({
       user
     })
+    //these creates a user object as inputs are filled in
   }
 
   onSubmit = (event) => {
+    //this is the function fired when a user is finished
     event.preventDefault()
 
     this.setState({
@@ -57,7 +59,9 @@ class Signup extends Component {
     })
 
     this.props.messageShow('Signing you up, please wait...')
-
+    //sad path handling for lag between requests
+    
+    //The actual request to registering a new user
     this.props.register(this.state.user)
       .then(response => {
         this.setState({

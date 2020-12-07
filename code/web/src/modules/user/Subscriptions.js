@@ -19,8 +19,10 @@ import SubscriptionItem from '../subscription/Item'
 
 // Component
 class Subscriptions extends PureComponent {
+//Subscriptions does not rerender if state values don't change
 
   // Runs on server only for SSR
+  //This is returning the user's list of subscriptions
   static fetchData({ store }) {
     return store.dispatch(getListByUser())
   }
@@ -31,14 +33,17 @@ class Subscriptions extends PureComponent {
   }
 
   render() {
+    {/*This returns the actual Subscriptions component*/}
     return (
       <div>
         {/* SEO */}
+        {/*This updates the title for the "page"*/}
         <Helmet>
           <title>My Subscriptions - Crate</title>
         </Helmet>
 
         {/* Top title bar */}
+        {/* This returns the header explaining a user is viwing personal subscriptions */}
         <Grid style={{ backgroundColor: grey }}>
           <GridCell style={{ padding: '2em', textAlign: 'center' }}>
             <H3 font="secondary">My subscriptions</H3>
@@ -50,6 +55,8 @@ class Subscriptions extends PureComponent {
         </Grid>
 
         {/* Product list */}
+        {/* This has the list of subscriptions for a user being populated */}
+        {/* I am curious about the use of the word "product" here */}
         <Grid>
           <GridCell>
             {

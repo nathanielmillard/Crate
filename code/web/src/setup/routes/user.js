@@ -1,4 +1,5 @@
 //****Annotate Me*****
+//these paths dictate what components are rendered for a user
 // App Imports
 import Login from '../../modules/user/Login'
 import Signup from '../../modules/user/Signup'

@@ -1,9 +1,11 @@
 //****Annotate Me*****
+
 // App Imports
 import { isEmpty } from '../../../setup/helpers'
 import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
 
 // Initial State
+//this sets all the values before user inputs and sign ins
 export const userInitialState = {
   error: null,
   isLoading: false,
@@ -12,6 +14,7 @@ export const userInitialState = {
 }
 
 // State
+//these are the actual things being stored and accessed from state
 export default (state = userInitialState, action) => {
   switch (action.type) {
     case SET_USER:
