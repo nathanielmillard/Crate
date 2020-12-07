@@ -28,3 +28,6 @@ export default {
     auth: true
   }
 }
+
+//If we decide to add any additional routes to the profile functionality,
+// we will need to make sure to update them here
