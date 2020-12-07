@@ -19,6 +19,7 @@ module.exports = function(sequelize, DataTypes) {
 
   User.associate = function(models) {
     User.hasMany(models.Subscription)
+    // add relationship to allow users to hold on to products that they are purchased
   }
 
   return User

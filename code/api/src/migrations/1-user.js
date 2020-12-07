@@ -19,6 +19,7 @@ module.exports = {
       role: {
         type: Sequelize.TEXT
       },
+      // add a default of null for an address type TEXT 
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -21,5 +21,6 @@ module.exports = function(sequelize, DataTypes) {
     image: {
       type: DataTypes.TEXT
     }
+    // add relationships to allow crate and products to share a many to many relationship
   })
 }
