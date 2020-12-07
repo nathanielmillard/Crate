@@ -1,3 +1,5 @@
+//Gradients used throughout the app
+
 // Gradients
 
 // App Imports

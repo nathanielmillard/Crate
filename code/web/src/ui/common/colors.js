@@ -1,3 +1,5 @@
+//Colors used throughout the app
+
 // Colors
 
 export const primary = '#7367F0'

@@ -1,3 +1,7 @@
+//Styling for input box
+  //may want to use this for styling our input fields
+  //to maintain uniformity in styling...
+
 // Imports
 import React from 'react'
 import PropTypes from 'prop-types'

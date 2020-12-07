@@ -1,3 +1,6 @@
+//Common styling for buttons used throughout the app
+//Will probably want to use...
+
 // Imports
 import React from 'react'
 import PropTypes from 'prop-types'

@@ -1,3 +1,5 @@
+//Shadows used throughout the app
+
 // Shadows
 
 // Box
