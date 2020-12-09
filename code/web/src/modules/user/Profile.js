@@ -18,6 +18,7 @@ import { level1 } from '../../ui/common/shadows'
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { logout } from './api/actions'
+import EditProfile from './EditProfile'
 
 // Component
 const Profile = (props) => (
@@ -58,6 +59,7 @@ const Profile = (props) => (
         <Button theme="primary" style={{ marginLeft: '1em' }}>Edit Info</Button>
       </GridCell>
     </Grid>
+    <EditProfile />
   </div>
 )
 
