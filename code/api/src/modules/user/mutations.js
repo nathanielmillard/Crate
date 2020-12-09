@@ -3,7 +3,7 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
 import { UserType } from './types'
-import { create, remove } from './resolvers'
+import { create, remove, edit } from './resolvers'
 // The 'import' commands above import functions & variables from other files/folders
 
 // Create
@@ -40,4 +40,19 @@ export const userRemove = {
     }
   },
   resolve: remove
+}
+
+export const userEmail = {
+  type: UserType,
+  args: {
+    email: {
+      name: 'email',
+      type: GraphQLString
+    },
+    id: {
+      name: 'id',
+      type: GraphQLInt
+    }
+  },
+  resolve: edit
 }
