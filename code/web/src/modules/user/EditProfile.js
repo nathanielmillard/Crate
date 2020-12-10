@@ -15,32 +15,40 @@ class EditProfile extends Component {
         }
     }
 
+    handleUserInput = (event) => {
+        this.setState( { [event.target.name]: event.target.value } )
+    }
+
     render() {
         return(
             <form>
                 <input
                     type='text'
+                    name='name'
                     placeholder='name'
                     value={this.state.name}
-                    //onChange
+                    onChange={event => this.handleUserInput(event)}
                 />
                 <input
                     type='text'
+                    name='description'
                     placeholder='description'
                     value={this.state.description}
-                    //onChange
+                    onChange={event => this.handleUserInput(event)}
                 />
                 <input
                     type='text'
+                    name='email'
                     placeholder='email'
                     value={this.state.email}
-                    //onChange
+                    onChange={event => this.handleUserInput(event)}
                 />
                 <input
                     type='text'
+                    name='address'
                     placeholder='address'
                     value={this.state.address}
-                    //onChange
+                    onChange={event => this.handleUserInput(event)}
                 />
             </form>
         )
