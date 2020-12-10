@@ -18,7 +18,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT
     }
   })
-//This is where we create our relationship between users and subscriptions
   User.associate = function(models) {
     User.hasMany(models.Subscription)
   }

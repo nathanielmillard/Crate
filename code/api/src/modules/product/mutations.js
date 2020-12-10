@@ -55,7 +55,6 @@ export const productUpdate = {
       name: 'name',
       type: GraphQLString
     },
-
     slug: {
       name: 'slug',
       type: GraphQLString

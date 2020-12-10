@@ -83,7 +83,6 @@ export async function remove(parentValue, { id }, { auth }) {
     const product = await models.Product.findOne({where: {id}})
 
     if (!product) {
-      // Product does not exists
       throw new Error('The product does not exists.')
     } else {
       return await models.Product.destroy({where: {id}})
