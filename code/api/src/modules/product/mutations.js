@@ -55,7 +55,6 @@ export const productUpdate = {
       name: 'name',
       type: GraphQLString
     },
-    // Not sure what 'slug' is. Google search didn't say much. Could maybe be like an id or some other identifier
     slug: {
       name: 'slug',
       type: GraphQLString
