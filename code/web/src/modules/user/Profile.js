@@ -18,6 +18,7 @@ import { level1 } from '../../ui/common/shadows'
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
 import { logout } from './api/actions'
+import EditProfile from './EditProfile'
 
 // Component
 const Profile = (props) => (
@@ -50,29 +51,15 @@ const Profile = (props) => (
         {/*Address text should be dynamic from user details ie props.user.details.shipping */}
       </GridCell>
     </Grid>
-    <Grid>
-      {
-        this.props.orderHistory.isLoading
-          ? <Loading/>
-          : this.props.orderHistory.list.length > 0
-              ? this.props.orderHistory.list.map(product => (
-                  <GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
-                    <H3>{product.name}</H3>
-                    <p>{product.description}</p>
-                    {/* Items will also have a boolean value to indicate if item was kept */}
-                    {/* Render image with opacity based on boolean value */}
-                  </GridCell>
-                ))
-              : <EmptyMessage message="You have not received any crate orders yet." />
-      }
-    </Grid>
+    
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-        <Button theme="primary" onClick={props.loadHistory}>Order History</Button>
+        <Button theme="primary">Order History</Button>
         <Button theme="secondary" onClick={props.logout} style={{ marginLeft: '1em' }}>Logout</Button>
         <Button theme="primary" style={{ marginLeft: '1em' }}>Edit Info</Button>
       </GridCell>
     </Grid>
+    <EditProfile />
   </div>
 )
 
@@ -80,7 +67,7 @@ const Profile = (props) => (
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired, 
-  loadHistory: PropTypes.func 
+  //loadHistory: PropTypes.func 
   //loadHistory will be required once that functionality is written
 }
 
@@ -92,3 +79,20 @@ function profileState(state) {
 }
 
 export default connect(profileState, { logout })(Profile)
+
+//<Grid>
+//      {
+//        this.props.orderHistory.isLoading
+//          ? <Loading/>
+//          : this.props.orderHistory.list.length > 0
+//              ? this.props.orderHistory.list.map(product => (
+//                  <GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
+//                    <H3>{product.name}</H3>
+//                    <p>{product.description}</p>
+//                    {/* Items will also have a boolean value to indicate if item was kept */}
+//                    {/* Render image with opacity based on boolean value */}
+//                  </GridCell>
+//                ))
+//              : <EmptyMessage message="You have not received any crate orders yet." />
+//      }
+//</Grid>

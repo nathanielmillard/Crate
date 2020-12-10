@@ -91,6 +91,12 @@ class Item extends PureComponent {
           <p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>
             Subscribed on { new Date(parseInt(createdAt)).toDateString() }
           </p>
+          <p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>
+            Estimated Delivery Date: XX/XX/XXXX 
+            <input
+              type='date'
+            />
+          </p>
         </div>
       </Card>
     )
