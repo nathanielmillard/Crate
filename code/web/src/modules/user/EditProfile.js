@@ -50,6 +50,8 @@ class EditProfile extends Component {
                     value={this.state.address}
                     onChange={event => this.handleUserInput(event)}
                 />
+                <button type='button'>Submit</button>
+                {/* onClick, will need to dispatch action*/}
             </form>
         )
     }
