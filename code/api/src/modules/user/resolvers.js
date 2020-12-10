@@ -9,13 +9,9 @@ import models from '../../setup/models'
 
 // Create
 export async function create(parentValue, { name, email, password }) {
-  // Users exists with same email check
-  // This is a 'register user' function.
-  // 'const user =' defines a variable 'user' as a SQL/GraphQL query of finding a specific User using an email. If a User isn't found, they are created (lines 20 - 24). If a User is found, an error is thrown.
   const user = await models.User.findOne({ where: { email } })
 
   if (!user) {
-    // User does not exists
     const passwordHashed = await bcrypt.hash(password, serverConfig.saltRounds)
 
     return await models.User.create({
@@ -24,25 +20,20 @@ export async function create(parentValue, { name, email, password }) {
       password: passwordHashed
     })
   } else {
-    // User exists
     throw new Error(`The email ${ email } is already registered. Please try to login.`)
   }
 }
 
 export async function login(parentValue, { email, password }) {
   const user = await models.User.findOne({ where: { email } })
-  // This function checks if a User of the specific email (with the corresponding password) exists. If a User isn't found, an error is thrown. If the wrong password is entered, a different error is thrown
   if (!user) {
-    // User does not exists
     throw new Error(`We do not have any user registered with ${ email } email address. Please signup.`)
   } else {
     const userDetails = user.get()
 
-    // User exists
     const passwordMatch = await bcrypt.compare(password, userDetails.password)
 
     if (!passwordMatch) {
-      // Incorrect password
       throw new Error(`Sorry, the password you entered is incorrect. Please try again.`)
     } else {
       const userDetailsToken = {
