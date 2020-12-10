@@ -12,25 +12,24 @@ module.exports = {
         type: Sequelize.STRING
       },
       addressLineTwo: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       city: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       state: {
-        type: Sequelize.TEXT
+        type: Sequelize.STRING
       },
       zipCode: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER
       },
       country: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       }
     });
   },
-//The 'down' tells us what we would like our User migration to look like if we decide to 'roll back' aka make a change to our migration.
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('shipping address');
   }
