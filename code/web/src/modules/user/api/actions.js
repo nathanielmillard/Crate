@@ -11,7 +11,7 @@ export const LOGIN_REQUEST = 'AUTH/LOGIN_REQUEST'
 export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
 export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
-
+export const LOAD_HISTORY = 'LOAD_HISTORY'
 // Actions
 
 // Set a user after login or using localStorage token
@@ -71,7 +71,6 @@ export function loginSetUserLocalStorageAndCookie(token, user) {
   // Update token
   window.localStorage.setItem('token', token)
   window.localStorage.setItem('user', JSON.stringify(user))
-
   // Set cookie for SSR
   cookie.set('auth', { token, user }, { path: '/' })
 }
@@ -103,7 +102,6 @@ export function logoutUnsetUserLocalStorageAndCookie() {
   // Remove token
   window.localStorage.removeItem('token')
   window.localStorage.removeItem('user')
-
   // Remove cookie
   cookie.remove('auth')
 }
@@ -116,4 +114,42 @@ export function getGenders() {
       fields: ['id', 'name']
     }))
   }
+}
+
+//Load User History
+
+export function loadHistory() {
+  console.log('You have history!')
+  return dispatch => {
+    dispatch({
+      orderHistory: [
+        {
+          id: 1,
+          image: '../../../../public/images/crate-broken.png',
+          name: 'A Thing!',
+          description: "It's a thing!",
+          purchased: true
+        },
+        {
+          id: 2,
+          image: '../../../../public/images/crate-broken.png',
+          name: 'A Different Thing!',
+          description: "It's a thing!",
+          purchased: false
+        },
+        {
+          id: 3,
+          image: '../../../../public/images/crate-broken.png',
+          name: 'A Third Thing!',
+          description: "It's a thing!",
+          purchased: true
+        }
+      ],
+      type: 'LOAD_HISTORY'
+    })
+  }
+  //I want to mock user history of products here
+  //This would ideally be a fetch request updating the user's history
+  //But we don't currently have that on our BE
+  //Maybe won't get it.
 }
