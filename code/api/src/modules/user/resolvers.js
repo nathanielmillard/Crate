@@ -17,6 +17,7 @@ export async function create(parentValue, { name, email, password }) {
     return await models.User.create({
       name,
       email,
+      image: "https://i.ibb.co/12VhQLp/funny-cat1.png",
       password: passwordHashed
     })
   } else {
