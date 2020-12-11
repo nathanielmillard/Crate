@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 // Component
 const Tile = (props) => {
-  const { children, image, width, height, style, shadow, ...others } = props
+  const { children, image, width, height, style, shadow, opacity, ...others } = props
 
   return (
     <div style={Object.assign({ height, width }, style)} {...others}>
@@ -16,6 +16,7 @@ const Tile = (props) => {
           background-image:url('${ image }');
           background-size: 100% auto;
           box-shadow: ${ shadow ? shadow : 'none' };
+          opacity: ${opacity ? opacity : 1}
         }
       `}</style>
     </div>
@@ -28,7 +29,8 @@ Tile.propTypes = {
   style: PropTypes.object,
   width: PropTypes.number,
   height: PropTypes.number,
-  shadow: PropTypes.string
+  shadow: PropTypes.string,
+  opacity: PropTypes.number
 }
 Tile.defaultProps = {
   style: {},
