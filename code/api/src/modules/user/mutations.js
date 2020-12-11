@@ -55,3 +55,18 @@ export const userEmail = {
   },
   resolve: edit
 }
+
+export const userImage = {
+  type: UserType,
+  args: {
+    image: {
+      name: 'image',
+      type: GraphQLString
+    },
+    id: {
+      name: 'id',
+      type: GraphQLInt
+    }
+  },
+  resolve: edit
+}

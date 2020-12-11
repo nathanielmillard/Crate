@@ -14,7 +14,8 @@
     "build:prod": "babel src -s -D -d build",
     "start:server": "node build/index.js",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "db:migrate:test": "NODE_ENV=test ./node_modules/.bin/sequelize db:migrate"
   },
   "keywords": [],
   "author": "",

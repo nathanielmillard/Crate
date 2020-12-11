@@ -66,14 +66,16 @@ export async function remove(parentValue, { id }) {
   return await models.User.destroy({ where: { id } })
 }
 
-// email update
-export async function edit(parentValue, { id, email }) {
-    return await models.User.update(
-      {
-        email
-      },
-      {where: {id}}
-    )
+// user update
+export async function edit(parentValue, { id, email, image, description }) {
+  return await models.User.update(
+    {
+      email,
+      description,
+      image
+    },
+    { where: { id } }
+  )
 }
 
 // User genders

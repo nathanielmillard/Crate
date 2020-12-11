@@ -13,6 +13,7 @@ module.exports = {
         password: bcrypt.hashSync('123456', config.saltRounds),
         role: params.user.roles.admin,
         description: 'Anti-Fashionista',
+        image: 'hey',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -22,6 +23,7 @@ module.exports = {
         password: bcrypt.hashSync('123456', config.saltRounds),
         role: params.user.roles.user,
         description: 'Fashionista',
+        image: 'hey',
         createdAt: new Date(),
         updatedAt: new Date()
       }
