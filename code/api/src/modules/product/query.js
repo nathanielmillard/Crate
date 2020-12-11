@@ -10,6 +10,7 @@ export const products = {
   type: new GraphQLList(ProductType),
   resolve: getAll
 }
+// the 'export' command I think allows for that 'const' to be imported (used) in another file/folder
 
 // Product By slug
 export const product = {
@@ -21,6 +22,7 @@ export const product = {
 }
 
 // Product By ID
+// Gets a product by ID
 export const productById = {
   type: ProductType,
   args: {
@@ -30,6 +32,7 @@ export const productById = {
 }
 
 // Products Related
+// Gets all products related to a specific one
 export const productsRelated = {
   type: new GraphQLList(ProductType),
   args: {
@@ -39,6 +42,7 @@ export const productsRelated = {
 }
 
 // Product Types
+// grabs all product types
 export const productTypes = {
   type: new GraphQLList(ProductTypesType),
   resolve: getTypes
