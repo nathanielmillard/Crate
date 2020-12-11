@@ -62,14 +62,32 @@ const Profile = (props) => (
     <Grid>
     {
     props.user.history &&
-          props.user.history.map(product => (
-            <GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
-            <H3>{product.name}</H3>
-            <p>{product.description}</p>
-            {/* Items will also have a boolean value to indicate if item was kept */}
-            {/* Render image with opacity based on boolean value */}
-            </GridCell>
-          ))
+          props.user.history.map(product => {
+            if(product.purchased) {
+            return (<GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
+                <H3>{product.name}</H3>
+                <p>{product.description}</p>
+                <ImageTile
+                  image={product.image}
+                  width={250}
+                  height={250}/>
+                {/* Items will also have a boolean value to indicate if item was kept */}
+                {/* Render image with opacity based on boolean value */}
+              </GridCell>)
+            } else {
+              return (<GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
+                <H3>{product.name}</H3>
+                <p>{product.description}</p>
+                <ImageTile
+                  image={product.image}
+                  width={250}
+                  height={250}
+                  opacity={.5}/>
+                {/* Items will also have a boolean value to indicate if item was kept */}
+                {/* Render image with opacity based on boolean value */}
+              </GridCell>)
+            }
+          })
     }
     </Grid>
     <EditProfile />
@@ -96,6 +114,6 @@ function profileState(state) {
 //   <EmptyMessage message="You have not received any crate orders yet." />
 // }
 
-// would lve sad path handling for if a user dsn't have a history
+// would love sad path handling for if a user dsn't have a history
 // and if the history is loading, but currently we are mocking data
 export default connect(profileState, { logout, loadHistory })(Profile)
