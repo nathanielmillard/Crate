@@ -8,7 +8,7 @@
     "seederStorage": "sequelize"
   },
   "test": {
-    "username": "postgres",
+    "username": "travisgm",
     "password": null,
     "database": "crate_test",
     "host": "127.0.0.1",

@@ -22,6 +22,12 @@ describe('User', () => {
     )
     done();
   })
+  // it('should successfully create a user with valid credentials', async () => {
+  //
+  //
+  //
+  //   done();
+  // });
 })
 
 // to only run one test, do 'it.only(...)'
