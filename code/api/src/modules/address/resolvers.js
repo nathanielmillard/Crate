@@ -3,23 +3,23 @@ import models from '../../setup/models'
 
 // Get ShippingAddress by ID
 export async function get(parentValue, { id }) {
-  const shippingAddress = await models.ShippingAddress.findOne({
+  const address = await models.Address.findOne({
     where: { id },
     include: [
       { model: models.User, as: 'user' },
     ]
   })
-  if (!shippingAddress) {
-    throw new Error('The shipping address you are looking for does not exist.')
+  if (!address) {
+    throw new Error('The  address you are looking for does not exist.')
   } else {
-    return shippingAddress
+    return address
   }
 }
 
-// Get ShippingAddress by user
+// Get Address by user
 export async function getByUser(parentValue, {}, { auth }) {
   if(auth.user && auth.user.id > 0) {
-    return await models.ShippingAddress.findAll({
+    return await models.Address.findAll({
       where: {
         userId: auth.user.id
       },
@@ -28,33 +28,33 @@ export async function getByUser(parentValue, {}, { auth }) {
       ]
     })
   } else {
-    throw new Error('Please login to view your shipping address.')
+    throw new Error('Please login to view your address.')
   }
 }
 
-// Get all Shipping Addresses
+// Get all  Addresses
 export async function getAll() {
-  return await models.ShippingAddress.findAll({
+  return await models.Address.findAll({
     include: [
       { model: models.User, as: 'user' },
     ]
   })
 }
 
-// Create Shipping Address
+// Create  Address
 export async function create(parentValue, {}, { auth }) {
   if(auth.user && auth.user.id > 0) {
-    return await models.ShippingAddress.create({
+    return await models.Address.create({
       userId: auth.user.id
     })
   } else {
-    throw new Error('Please login to add shipping address.')
+    throw new Error('Please login to add address.')
   }
 }
 
-// Edit Shipping Address
+// Edit  Address
 export async function edit(parentValue, { id, addressLineOne, addressLineTwo, city, state, zipCode, country }, { auth }) {
-  return await models.ShippingAddress.update(
+  return await models.Address.update(
     {
       addressLineOne
       addressLineTwo

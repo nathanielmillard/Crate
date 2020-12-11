@@ -2,12 +2,12 @@
 import { GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
-import { ShippingAddressType } from './types'
-import { create, remove, edit } from './resolvers'
+import { AddressType } from './types'
+import { create, edit } from './resolvers'
 
 // Create
-export const addShippingAddress = {
-  type: ShippingAddressType,
+export const addAddress = {
+  type: AddressType,
   args: {
     //not sure if this is needed or it is inherent when filling out form
     //we probably need to make it inherent.
@@ -50,8 +50,8 @@ export const addShippingAddress = {
 }
 
 // Edit
-export const editShippingAddress = {
-  type: ShippingAddressType,
+export const editAddress = {
+  type: AddressType,
   args: {
     addressLineOne: {
       name: 'addressLineOne',

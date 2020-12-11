@@ -4,10 +4,10 @@ import { GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql'
 // App Imports
 import { UserType } from '../user/types'
 
-// ShippingAddress type
-const ShippingAddressType = new GraphQLObjectType({
-  name: 'shipping address',
-  description: 'ShippingAddress Type',
+// Address type
+const AddressType = new GraphQLObjectType({
+  name: 'address',
+  description: 'Address Type',
 
   fields: () => ({
     id: { type: GraphQLInt },
@@ -23,4 +23,4 @@ const ShippingAddressType = new GraphQLObjectType({
   })
 })
 
-export default ShippingAddressType
+export default AddressType

@@ -1,7 +1,7 @@
 //This file creates our User table in the database
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('shipping address', {
+    return queryInterface.createTable('address', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -47,6 +47,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('shipping address');
+    return queryInterface.dropTable('address');
   }
 }

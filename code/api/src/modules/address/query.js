@@ -2,24 +2,24 @@
 import { GraphQLInt, GraphQLString, GraphQLList } from 'graphql'
 
 // App Imports
-import { ShippingAddressType } from './types'
+import { AddressType } from './types'
 import { get, getAll, getByUser } from './resolvers'
 
 // All
-export const shippingAddresses = {
-  type: new GraphQLList(ShippingAddressType),
+export const addresses = {
+  type: new GraphQLList(AddressType),
   resolve: getAll
 }
 
 // By User
-export const shippingAddressByUser = {
-  type: new GraphQLList(ShippingAddressType),
+export const addressByUser = {
+  type: new GraphQLList(AddressType),
   resolve: getByUser
 }
 
 //By ID
-export const shippingAddress = {
-  type: ShippingAddressType,
+export const address = {
+  type: AddressType,
   args: {
     id: { type: GraphQLInt }
   },
