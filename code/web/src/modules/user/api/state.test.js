@@ -1,5 +1,6 @@
 import state from './state.js'
 import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
+import '@testing-library/jest-dom'
 
 describe('state', () => {
     it('should return the initial state', () => {
@@ -62,6 +63,31 @@ describe('state', () => {
                 isLoading: true
             }
         );
+
+    })
+
+    it('should show status of login response', () => {
+        const action = {
+            type: LOGIN_RESPONSE,
+            error: 'Please try again'
+        }
+
+        const initialState = {
+            error: null,
+            isLoading: false,
+            isAuthenticated: false,
+            details: null
+        }
+        const nextState = state(initialState, action);
+        
+        expect(nextState).toEqual(
+            expect.objectContaining(
+            {   
+                error: 'Please try again',
+                isLoading: false
+            }
+        )
+        )
 
     })
 })
