@@ -3,7 +3,9 @@ import { GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
 import { UserType } from './types'
+
 import { create, remove, edit } from './resolvers'
+
 
 // Create
 export const userSignup = {
@@ -44,6 +46,21 @@ export const userEmail = {
   args: {
     email: {
       name: 'email',
+      type: GraphQLString
+    },
+    id: {
+      name: 'id',
+      type: GraphQLInt
+    }
+  },
+  resolve: edit
+}
+
+export const userImage = {
+  type: UserType,
+  args: {
+    image: {
+      name: 'image',
       type: GraphQLString
     },
     id: {
