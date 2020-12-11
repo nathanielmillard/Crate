@@ -17,7 +17,7 @@ import { level1 } from '../../ui/common/shadows'
 // App Imports
 import { APP_URL } from '../../setup/config/env'
 import userRoutes from '../../setup/routes/user'
-import { logout } from './api/actions'
+import { logout, loadHistory } from './api/actions'
 import EditProfile from './EditProfile'
 
 // Component
@@ -51,13 +51,26 @@ const Profile = (props) => (
         {/*Address text should be dynamic from user details ie props.user.details.shipping */}
       </GridCell>
     </Grid>
-    
+
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
-        <Button theme="primary">Order History</Button>
+        <Button theme="primary" onClick={props.loadHistory} >Order History</Button>
         <Button theme="secondary" onClick={props.logout} style={{ marginLeft: '1em' }}>Logout</Button>
         <Button theme="primary" style={{ marginLeft: '1em' }}>Edit Info</Button>
       </GridCell>
+    </Grid>
+    <Grid>
+    {
+    props.user.history &&
+          props.user.history.map(product => (
+            <GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
+            <H3>{product.name}</H3>
+            <p>{product.description}</p>
+            {/* Items will also have a boolean value to indicate if item was kept */}
+            {/* Render image with opacity based on boolean value */}
+            </GridCell>
+          ))
+    }
     </Grid>
     <EditProfile />
   </div>
@@ -66,8 +79,8 @@ const Profile = (props) => (
 // Component Properties
 Profile.propTypes = {
   user: PropTypes.object.isRequired,
-  logout: PropTypes.func.isRequired, 
-  //loadHistory: PropTypes.func 
+  logout: PropTypes.func.isRequired,
+  loadHistory: PropTypes.func.isRequired
   //loadHistory will be required once that functionality is written
 }
 
@@ -78,21 +91,11 @@ function profileState(state) {
   }
 }
 
-export default connect(profileState, { logout })(Profile)
+// {
+//   props.user.history.length = 0 &&
+//   <EmptyMessage message="You have not received any crate orders yet." />
+// }
 
-//<Grid>
-//      {
-//        this.props.orderHistory.isLoading
-//          ? <Loading/>
-//          : this.props.orderHistory.list.length > 0
-//              ? this.props.orderHistory.list.map(product => (
-//                  <GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
-//                    <H3>{product.name}</H3>
-//                    <p>{product.description}</p>
-//                    {/* Items will also have a boolean value to indicate if item was kept */}
-//                    {/* Render image with opacity based on boolean value */}
-//                  </GridCell>
-//                ))
-//              : <EmptyMessage message="You have not received any crate orders yet." />
-//      }
-//</Grid>
+// would lve sad path handling for if a user dsn't have a history
+// and if the history is loading, but currently we are mocking data
+export default connect(profileState, { logout, loadHistory })(Profile)
