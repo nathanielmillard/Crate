@@ -5,7 +5,7 @@ import cookie from 'js-cookie'
 
 // App Imports
 import { routeApi } from '../../../setup/routes'
-
+import {APP_URL} from '../../../setup/config/env.js'
 // Actions Types
 export const LOGIN_REQUEST = 'AUTH/LOGIN_REQUEST'
 export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
@@ -125,21 +125,21 @@ export function loadHistory() {
       orderHistory: [
         {
           id: 1,
-          image: '../../../../public/images/crate-broken.png',
+          image: `${APP_URL}/images/crate-broken.png`,
           name: 'A Thing!',
           description: "It's a thing!",
           purchased: true
         },
         {
           id: 2,
-          image: '../../../../public/images/crate-broken.png',
+          image: `${APP_URL}/images/crate-broken.png`,
           name: 'A Different Thing!',
           description: "It's a thing!",
           purchased: false
         },
         {
           id: 3,
-          image: '../../../../public/images/crate-broken.png',
+          image: `${APP_URL}/images/crate-broken.png`,
           name: 'A Third Thing!',
           description: "It's a thing!",
           purchased: true
