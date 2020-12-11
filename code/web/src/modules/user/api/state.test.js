@@ -16,7 +16,7 @@ describe('state', () => {
     })
 
     it('should set the user state', () => {
-        const action ={
+        const action = {
             type: SET_USER,
             user: 'forehead Taylor'
         }
@@ -35,6 +35,31 @@ describe('state', () => {
                 error: null,
                 isAuthenticated: true,
                 isLoading: false
+            }
+        );
+
+    })
+
+    it('should show status of login request', () => {
+        const action = {
+            type: LOGIN_REQUEST,
+            isLoading: true
+        }
+
+        const initialState = {
+            error: null,
+            isLoading: false,
+            isAuthenticated: false,
+            details: null
+        }
+        const nextState = state(initialState, action);
+
+        expect(nextState).toEqual(
+            {   
+                details: null,
+                error: null,
+                isAuthenticated: false,
+                isLoading: true
             }
         );
 
