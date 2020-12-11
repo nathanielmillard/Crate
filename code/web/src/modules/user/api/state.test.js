@@ -90,4 +90,27 @@ describe('state', () => {
         )
 
     })
+
+    it('should show status of logout', () => {
+        const action = {
+            type: LOGOUT
+        }
+
+        const initialState = {
+            error: null,
+            isLoading: false,
+            isAuthenticated: true,
+            details: null 
+        }
+
+        const nextState = state(initialState, action);
+        
+        expect(nextState).toEqual({
+            error: null,
+            isLoading: false,
+            isAuthenticated: false,
+            details: null
+        })
+
+    })
 })
