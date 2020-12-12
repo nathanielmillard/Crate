@@ -6,6 +6,7 @@ import { updateUserInfo } from './api/actions'
 
 import Button from '../../ui/button'
 import Input from '../../ui/input/Input'
+import { grey, grey2 } from '../../ui/common/colors'
 
 
 
@@ -41,15 +42,13 @@ class EditProfile extends Component {
        
     }
 
-
     render() {
-        console.log(this.state.shown)
         const showing = this.state.shown;
         return(
             
             <div>
-                <Button onClick={this.showEditInfo} theme='secondary'>Edit Info</Button>
-                <form style={{ display: (showing === true ? 'block' : 'none'), padding: '2em', textAlign: 'center', width: '25em', margin: '0 auto' }}>
+                <Button onClick={this.showEditInfo} theme='secondary' style={{margin: '1em auto'}}>Edit My Info</Button>
+                <form style={{ display: (showing === true ? 'block' : 'none'), padding: '2em', textAlign: 'center', width: 'auto', margin: '0 auto', backgroundColor: grey, borderRadius: '5px' }}>
                     <Input
                         type='text'
                         name='name'
