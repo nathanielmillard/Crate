@@ -12,6 +12,7 @@ export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
 export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
 export const LOAD_HISTORY = 'LOAD_HISTORY'
+export const UPDATE_USER = 'UPDATE_USER'
 // Actions
 
 // Set a user after login or using localStorage token
@@ -152,8 +153,13 @@ export function loadHistory() {
   //Maybe won't get it.
 }
 
-export function updateUserInfo() {
-  console.log("You're Updated!")
+export function updateUserInfo(state) {
+  return dispatch => {
+    dispatch({
+      details: state,
+      type: 'UPDATE_USER'
+    })
+  }
   //take in state
   //fire a reducer to add state details to local user details
   //when/if we get a back end this would fire a post request to the API
