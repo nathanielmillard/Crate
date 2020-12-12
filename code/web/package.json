@@ -13,7 +13,7 @@
     "build:server:prod": "babel src -s -D -d build",
     "start:server:prod": " node build/index.js",
     "storybook": "start-storybook -p 9000 -c storybook",
-    "test": "jest" 
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
