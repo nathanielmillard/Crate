@@ -71,8 +71,6 @@ const Profile = (props) => (
                   image={product.image}
                   width={250}
                   height={250}/>
-                {/* Items will also have a boolean value to indicate if item was kept */}
-                {/* Render image with opacity based on boolean value */}
               </GridCell>)
             } else {
               return (<GridCell key={product.id} style={{ margin: '2em', float: 'left' }}>
@@ -83,8 +81,6 @@ const Profile = (props) => (
                   width={250}
                   height={250}
                   opacity={.5}/>
-                {/* Items will also have a boolean value to indicate if item was kept */}
-                {/* Render image with opacity based on boolean value */}
               </GridCell>)
             }
           })
