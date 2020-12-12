@@ -1,5 +1,5 @@
 import state from './state.js'
-import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
+import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, UPDATE_USER } from './actions'
 import '@testing-library/jest-dom'
 
 describe('state', () => {
@@ -112,5 +112,35 @@ describe('state', () => {
             details: null
         })
 
+    })
+
+    it('Should update user profile information', () => {
+        const initialState = {
+            error: null,
+            isLoading: false,
+            isAuthenticated: true,
+            details: null 
+        }
+
+        const userDetails = {
+            name: 'Taylor',
+            description: 'I love couches',
+            email: 'taylor@couch.com',
+            address: '123 ABC Street City, State 12345'
+        }
+
+        const action = {
+            type: 'UPDATE_USER',
+            details: userDetails
+        }
+
+        const result = state(initialState, action)
+        
+        expect(result.details).toEqual({
+            name: 'Taylor',
+            description: 'I love couches',
+            email: 'taylor@couch.com',
+            address: '123 ABC Street City, State 12345'
+        })
     })
 })
