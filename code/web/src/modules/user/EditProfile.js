@@ -19,6 +19,11 @@ class EditProfile extends Component {
         this.setState( { [event.target.name]: event.target.value } )
     }
 
+    updateUser = (event) => {
+      event.preventDefault()
+      this.props.updateUserInfo(this.state)
+    }
+
     render() {
         return(
             <form>
@@ -50,7 +55,7 @@ class EditProfile extends Component {
                     value={this.state.address}
                     onChange={event => this.handleUserInput(event)}
                 />
-                <button type='button' onClick={updateUserInfo}>Submit</button>
+                <button type='button' onClick={this.updateUser}>Submit</button>
                 {/* onClick, will need to dispatch action*/}
             </form>
         )
@@ -64,4 +69,4 @@ function editProfileState(state) {
     }
   }
 
-export default connect(editProfileState)(EditProfile)
+export default connect(editProfileState, {updateUserInfo})(EditProfile)
