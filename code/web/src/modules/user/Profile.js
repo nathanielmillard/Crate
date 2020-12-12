@@ -38,20 +38,22 @@ const Profile = (props) => (
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         {/*<Tile style={{}} image={icon}></Tile>*/}
-        <ImageTile width={300} height={530} shadow={level1} image={`${ APP_URL }/images/stock/men/1.jpg`} />
+        <ImageTile style={{ borderRadius: '5px'}} object-fit='cover' width={300} height={300} shadow={level1} image={`${ APP_URL }/images/stock/men/1.jpg`} />
       </GridCell>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
         <p style={{ marginBottom: '0.5em' }}>{props.user.details.description || 'I\'m a trendy Crate user!'}</p>
-        {/*Description text IS NOW dynamic from user details ie props.user.details.description */}
       </GridCell>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.address || '123 West 5th St City, State 12345' }</p>
-        {/*Address text IS NOW dynamic from user details ie props.user.details.shipping */}
       </GridCell>
+      <GridCell style={{ padding: '2em', textAlign: 'center' }}>
+        <EditProfile />
+      </GridCell>
+      
     </Grid>
-    <EditProfile />
+    
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <Button theme="primary" onClick={props.loadHistory} >Order History</Button>
@@ -94,7 +96,6 @@ Profile.propTypes = {
   user: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
   loadHistory: PropTypes.func.isRequired
-  //loadHistory will be required once that functionality is written
 }
 
 // Component State
