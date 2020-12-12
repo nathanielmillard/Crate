@@ -42,21 +42,20 @@ const Profile = (props) => (
       </GridCell>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
-        <p style={{ marginBottom: '0.5em' }}>{props.user.details.descrption || 'I\'m a trendy Crate user!'}</p>
-        {/*Description text should be dynamic from user details ie props.user.details.description */}
+        <p style={{ marginBottom: '0.5em' }}>{props.user.details.description || 'I\'m a trendy Crate user!'}</p>
+        {/*Description text IS NOW dynamic from user details ie props.user.details.description */}
       </GridCell>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.address || '123 West 5th St City, State 12345' }</p>
-        {/*Address text should be dynamic from user details ie props.user.details.shipping */}
+        {/*Address text IS NOW dynamic from user details ie props.user.details.shipping */}
       </GridCell>
     </Grid>
-
+    <EditProfile />
     <Grid>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <Button theme="primary" onClick={props.loadHistory} >Order History</Button>
         <Button theme="secondary" onClick={props.logout} style={{ marginLeft: '1em' }}>Logout</Button>
-        <Button theme="primary" style={{ marginLeft: '1em' }}>Edit Info</Button>
       </GridCell>
     </Grid>
     <Grid>
@@ -86,7 +85,7 @@ const Profile = (props) => (
           })
     }
     </Grid>
-    <EditProfile />
+    
   </div>
 )
 
