@@ -2,21 +2,28 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateUserInfo } from './api/actions'
 
+// UI Imports
+
+import Button from '../../ui/button'
+import Input from '../../ui/input/Input'
+
+
 
 class EditProfile extends Component {
     constructor(props) {
         super()
         this.state = {
             //image: ?
-            name: '',
-            description: '',
-            email: '',
-            address: ''
+            name: props.user.details.name || '',
+            description: props.user.details.description || '',
+            email: props.user.details.email || '',
+            address: props.user.details.address || ''
         }
     }
 
     handleUserInput = (event) => {
-        this.setState( { [event.target.name]: event.target.value } )
+        this.setState( { [event.target.name]: event.target.value } );
+        this.setState({ value: event.target.value })
     }
 
     updateUser = (event) => {
@@ -24,40 +31,47 @@ class EditProfile extends Component {
       this.props.updateUserInfo(this.state)
     }
 
+    showEditInfo = () => {
+        //this is the function that will show and hide the menu
+    }
+
     render() {
         return(
-            <form>
-                <input
-                    type='text'
-                    name='name'
-                    placeholder='name'
-                    value={this.state.name}
-                    onChange={event => this.handleUserInput(event)}
-                />
-                <input
-                    type='text'
-                    name='description'
-                    placeholder='description'
-                    value={this.state.description}
-                    onChange={event => this.handleUserInput(event)}
-                />
-                <input
-                    type='text'
-                    name='email'
-                    placeholder='email'
-                    value={this.state.email}
-                    onChange={event => this.handleUserInput(event)}
-                />
-                <input
-                    type='text'
-                    name='address'
-                    placeholder='address'
-                    value={this.state.address}
-                    onChange={event => this.handleUserInput(event)}
-                />
-                <button type='button' onClick={this.updateUser}>Submit</button>
-                {/* onClick, will need to dispatch action*/}
-            </form>
+            <div>
+                <Button theme='secondary'>Edit Info</Button>
+                <form style={{ padding: '2em', textAlign: 'center', width: '25em', margin: '0 auto' }}>
+                    <Input
+                        type='text'
+                        name='name'
+                        placeholder={this.props.user.details.name || 'name'}
+                        value={this.state.name}
+                        onChange={event => this.handleUserInput(event)}
+                    />
+                    <Input
+                        type='text'
+                        name='description'
+                        placeholder={this.props.user.details.description || 'description'}
+                        value={this.state.description}
+                        onChange={event => this.handleUserInput(event)}
+                    />
+                    <Input
+                        type='text'
+                        name='email'
+                        placeholder={this.props.user.details.email || 'email'}
+                        value={this.state.email}
+                        onChange={event => this.handleUserInput(event)}
+                    />
+                    <Input
+                        type='text'
+                        name='address'
+                        placeholder={this.props.user.details.address || 'address'}
+                        value={this.state.address}
+                        onChange={event => this.handleUserInput(event)}
+                    />
+                    <Button  theme='secondary' style={{ marginTop: '1em' }} type='submit' onClick={this.updateUser}>Submit</Button>
+                    {/* onClick, will need to dispatch action*/}
+                </form>
+            </div>
         )
     }
 }
