@@ -35,7 +35,7 @@ class EditProfile extends Component {
 
     render() {
         return(
-            <form style={{ padding: '2em', textAlign: 'center' }}>
+            <form style={{ padding: '2em', textAlign: 'center', width: '25em', margin: '0 auto' }}>
                 <Input
                     type='text'
                     name='name'
@@ -64,7 +64,7 @@ class EditProfile extends Component {
                     value={this.state.address}
                     onChange={event => this.handleUserInput(event)}
                 />
-                <Button theme="primary" style={{ marginLeft: '1em' }} type='button' onClick={this.updateUser}>Submit</Button>
+                <Button theme="primary" style={{ marginLeft: '1em' }} type='submit' onClick={this.updateUser}>Submit</Button>
                 {/* onClick, will need to dispatch action*/}
             </form>
         )
