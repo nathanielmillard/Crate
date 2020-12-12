@@ -117,9 +117,7 @@ export function getGenders() {
 }
 
 //Load User History
-
 export function loadHistory() {
-  console.log('You have history!')
   return dispatch => {
     dispatch({
       orderHistory: [
@@ -152,4 +150,11 @@ export function loadHistory() {
   //This would ideally be a fetch request updating the user's history
   //But we don't currently have that on our BE
   //Maybe won't get it.
+}
+
+export function updateUserInfo() {
+  console.log("You're Updated!")
+  //take in state
+  //fire a reducer to add state details to local user details
+  //when/if we get a back end this would fire a post request to the API
 }
