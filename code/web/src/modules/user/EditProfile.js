@@ -14,7 +14,7 @@ import { level1 } from '../../ui/common/shadows'
 
 class EditProfile extends Component {
     constructor(props) {
-        super(props)
+        super()
         this.state = {
             //image: ?
             name: props.user.details.name || '',
