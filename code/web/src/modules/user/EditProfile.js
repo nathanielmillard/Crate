@@ -35,8 +35,6 @@ class EditProfile extends Component {
     }
 
     render() {
-        console.log(this.state)
-        console.log(this.props)
         return(
 
             <form style={{ padding: '2em', textAlign: 'center', width: '25em', margin: '0 auto' }}>
@@ -50,14 +48,14 @@ class EditProfile extends Component {
                 <Input
                     type='text'
                     name='description'
-                    placeholder='description'
+                    placeholder={this.props.user.details.description || 'description'}
                     value={this.state.description}
                     onChange={event => this.handleUserInput(event)}
                 />
                 <Input
                     type='text'
                     name='email'
-                    placeholder={this.props.user.details.email}
+                    placeholder={this.props.user.details.email || 'email'}
                     value={this.state.email}
                     onChange={event => this.handleUserInput(event)}
                 />
