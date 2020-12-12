@@ -42,12 +42,12 @@ const Profile = (props) => (
       </GridCell>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <H4 style={{ marginBottom: '0.5em' }}>{props.user.details.name}</H4>
-        <p style={{ marginBottom: '0.5em' }}>Personal description goes here</p>
+        <p style={{ marginBottom: '0.5em' }}>{props.user.details.description ? props.user.details.description : "You don't have a description yet..."}</p>
         {/*Description text should be dynamic from user details ie props.user.details.description */}
       </GridCell>
       <GridCell style={{ padding: '2em', textAlign: 'center' }}>
         <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.email}</p>
-        <p style={{ color: grey2, marginBottom: '2em' }}>123 West 5th St City, State 80654</p>
+        <p style={{ color: grey2, marginBottom: '2em' }}>{props.user.details.address ? props.user.details.address : "You don't have a address yet..."}</p>
         {/*Address text should be dynamic from user details ie props.user.details.shipping */}
       </GridCell>
     </Grid>
@@ -104,7 +104,6 @@ function profileState(state) {
     user: state.user
   }
 }
-
 // {
 //   props.user.history.length = 0 &&
 //   <EmptyMessage message="You have not received any crate orders yet." />
