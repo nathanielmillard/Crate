@@ -6,6 +6,7 @@ import { updateUserInfo } from './api/actions'
 
 import Button from '../../ui/button'
 import Input from '../../ui/input/Input'
+import { grey, grey2 } from '../../ui/common/colors'
 
 
 
@@ -13,6 +14,7 @@ class EditProfile extends Component {
     constructor(props) {
         super()
         this.state = {
+            shown: false,
             //image: ?
             name: props.user.details.name || '',
             description: props.user.details.description || '',
@@ -32,14 +34,21 @@ class EditProfile extends Component {
     }
 
     showEditInfo = () => {
-        //this is the function that will show and hide the menu
+        if (this.state.shown === true) {
+            this.setState({ shown: false })
+        } else {
+            this.setState({ shown: true }) 
+        }
+       
     }
 
     render() {
+        const showing = this.state.shown;
         return(
+            
             <div>
-                <Button theme='secondary'>Edit Info</Button>
-                <form style={{ padding: '2em', textAlign: 'center', width: '25em', margin: '0 auto' }}>
+                <Button onClick={this.showEditInfo} theme='secondary' style={{margin: '1em auto'}}>Edit My Info</Button>
+                <form style={{ display: (showing === true ? 'block' : 'none'), padding: '2em', textAlign: 'center', width: 'auto', margin: '0 auto', backgroundColor: grey, borderRadius: '5px' }}>
                     <Input
                         type='text'
                         name='name'
