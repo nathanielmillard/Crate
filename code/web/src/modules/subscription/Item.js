@@ -23,8 +23,17 @@ class Item extends PureComponent {
     super(props)
 
     this.state = {
-      isLoading: false
+      isLoading: false, 
+      deliveryDate: ''
     }
+  }
+  
+  saveDate = (event) => {
+    this.setState({deliveryDate: event.target.value})
+  }
+
+  updateDelivery = () => {
+    this.props.updateDeliveryDate(this.state.deliveryDate)
   }
 
   onClickUnsubscribe = (id) => {
@@ -63,7 +72,7 @@ class Item extends PureComponent {
   }
 
   render() {
-    const { id, crate, createdAt } = this.props.subscription
+    const { id, crate, createdAt, deliveryDate } = this.props.subscription
     const { isLoading } = this.state
 
     return (
@@ -92,11 +101,12 @@ class Item extends PureComponent {
             Subscribed on { new Date(parseInt(createdAt)).toDateString() }
           </p>
           <p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>
-            Estimated Delivery Date: XX/XX/XXXX 
+            Estimated Delivery Date: {deliveryDate || "You do not have a delivery scheduled."} 
             <input
               type='date'
-              onChange={props.updateDeliveryDate}
+              onChange={event => this.saveDate(event)}
             />
+            <button type='submit' onClick={this.updateDelivery}>Submit</button>
           </p>
         </div>
       </Card>
@@ -110,7 +120,7 @@ Item.propTypes = {
   user: PropTypes.object.isRequired,
   remove: PropTypes.func.isRequired,
   getListByUser: PropTypes.func.isRequired,
-  updateDeliveryDate: PropTypes.func.isRequired, 
+  updateDeliveryDate: PropTypes.func, 
   messageShow: PropTypes.func.isRequired,
   messageHide: PropTypes.func.isRequired
 }
@@ -122,4 +132,4 @@ function itemState(state) {
   }
 }
 
-export default connect(itemState, { remove, getListByUser, messageShow, messageHide })(withRouter(Item))
+export default connect(itemState, { remove, getListByUser, messageShow, messageHide, updateDeliveryDate })(withRouter(Item))
