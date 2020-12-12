@@ -23,14 +23,14 @@ class EditProfile extends Component {
 
     handleUserInput = (event) => {
         this.setState( { [event.target.name]: event.target.value } );
-        this.setState({value: e.target.value })
+        this.setState({ value: event.target.value })
     }
 
     updateUser = (event) => {
       event.preventDefault()
       this.props.updateUserInfo(this.state)
     }
-    
+
     showEditInfo = () => {
         //this is the function that will show and hide the menu
     }
@@ -38,7 +38,7 @@ class EditProfile extends Component {
     render() {
         return(
             <div>
-                <Button onClick='showEditInfo' theme='secondary'>Edit Info</Button>
+                <Button theme='secondary'>Edit Info</Button>
                 <form style={{ padding: '2em', textAlign: 'center', width: '25em', margin: '0 auto' }}>
                     <Input
                         type='text'
@@ -68,7 +68,7 @@ class EditProfile extends Component {
                         value={this.state.address}
                         onChange={event => this.handleUserInput(event)}
                     />
-                    <Button theme="primary" style={{ marginTop: '1em' }} type='submit' onClick={this.updateUser}>Submit</Button>
+                    <Button  theme='secondary' style={{ marginTop: '1em' }} type='submit' onClick={this.updateUser}>Submit</Button>
                     {/* onClick, will need to dispatch action*/}
                 </form>
             </div>
