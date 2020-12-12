@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import { updateUserInfo } from './api/actions'
 
 
 class EditProfile extends Component {
@@ -50,7 +50,7 @@ class EditProfile extends Component {
                     value={this.state.address}
                     onChange={event => this.handleUserInput(event)}
                 />
-                <button type='button'>Submit</button>
+                <button type='button' onClick={updateUserInfo}>Submit</button>
                 {/* onClick, will need to dispatch action*/}
             </form>
         )
