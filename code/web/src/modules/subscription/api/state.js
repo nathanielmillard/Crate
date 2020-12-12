@@ -126,6 +126,8 @@ export const subscription = (state = subscriptionInitialState, action) => {
         error: action.error
       }
 
+// This reducer is intended to update the store with a new delivery date. While the action fires and the component state updates, the reducer doesn't update the state. 
+
     case SUBSCRIPTIONS_UPDATE_DELIVERY_DATE: 
       return {
         ...state, 
