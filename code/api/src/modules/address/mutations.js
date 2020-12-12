@@ -2,20 +2,13 @@
 import { GraphQLString, GraphQLInt } from 'graphql'
 
 // App Imports
-import { AddressType } from './types'
+import AddressType from './types'
 import { create, edit } from './resolvers'
 
 // Create
 export const addAddress = {
   type: AddressType,
   args: {
-    //not sure if this is needed or it is inherent when filling out form
-    //we probably need to make it inherent.
-    userId: {
-      name: 'userId',
-      type: GraphQLInt
-    },
-
     addressLineOne: {
       name: 'addressLineOne',
       type: GraphQLString

@@ -1,7 +1,7 @@
 // App Imports
 import models from '../../setup/models'
 
-// Get ShippingAddress by ID
+// Get Address by ID
 export async function get(parentValue, { id }) {
   const address = await models.Address.findOne({
     where: { id },
@@ -10,7 +10,7 @@ export async function get(parentValue, { id }) {
     ]
   })
   if (!address) {
-    throw new Error('The  address you are looking for does not exist.')
+    throw new Error('The address you are looking for does not exist.')
   } else {
     return address
   }
@@ -42,7 +42,7 @@ export async function getAll() {
 }
 
 // Create  Address
-export async function create(parentValue, {}, { auth }) {
+export async function create(parentValue, { addressLineOne, addressLineTwo, city, state, zipCode, country }, { auth }) {
   if(auth.user && auth.user.id > 0) {
     return await models.Address.create({
       userId: auth.user.id
@@ -53,7 +53,7 @@ export async function create(parentValue, {}, { auth }) {
 }
 
 // Edit  Address
-export async function edit(parentValue, { id, addressLineOne, addressLineTwo, city, state, zipCode, country }, { auth }) {
+export async function edit(parentValue, { addressLineOne, addressLineTwo, city, state, zipCode, country }, { auth }) {
   return await models.Address.update(
     {
       addressLineOne
