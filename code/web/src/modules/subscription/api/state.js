@@ -11,6 +11,7 @@ import {
   SUBSCRIPTIONS_GET_REQUEST,
   SUBSCRIPTIONS_GET_RESPONSE,
   SUBSCRIPTIONS_GET_FAILURE,
+  SUBSCRIPTIONS_UPDATE_DELIVERY_DATE,
 } from './actions'
 
 // Subscriptions list
@@ -123,6 +124,14 @@ export const subscription = (state = subscriptionInitialState, action) => {
         ...state,
         isLoading: false,
         error: action.error
+      }
+
+    case SUBSCRIPTIONS_UPDATE_DELIVERY_DATE: 
+      return {
+        ...state, 
+        isLoading: false, 
+        error: null, 
+        nextDelivery: action.deliveryDate
       }
 
     default:
