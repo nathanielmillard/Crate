@@ -47,7 +47,7 @@ export const subscriptions = (state = subscriptionsInitialState, action) => {
         isLoading: false,
         error: action.error
       }
-
+    
     default:
       return state
   }
@@ -66,7 +66,7 @@ const subscriptionsByUserInitialState = {
 export const subscriptionsByUser = (state = subscriptionsByUserInitialState, action) => {
   switch (action.type) {
     case SUBSCRIPTIONS_GET_LIST_BY_USER_REQUEST:
-      return {
+    return {
         ...state,
         isLoading: action.isLoading,
         error: null
@@ -86,7 +86,7 @@ export const subscriptionsByUser = (state = subscriptionsByUserInitialState, act
         isLoading: false,
         error: action.error
       }
-
+    
     default:
       return state
   }
@@ -131,7 +131,7 @@ export const subscription = (state = subscriptionInitialState, action) => {
         ...state, 
         isLoading: false, 
         error: null, 
-        nextDelivery: action.deliveryDate
+        deliveryDate: action.deliveryDate
       }
 
     default:
