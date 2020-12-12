@@ -1,8 +1,15 @@
 import state from './state.js'
-import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
+import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, UPDATE_USER, LOAD_HISTORY } from './actions'
 import '@testing-library/jest-dom'
 
 describe('state', () => {
+    const initialState = {
+        error: null,
+        isLoading: false,
+        isAuthenticated: true,
+        details: null 
+    }
+
     it('should return the initial state', () => {
         
         const initialState = {
@@ -11,7 +18,9 @@ describe('state', () => {
             isAuthenticated: false,
             details: null
         }
+
         const result = state(undefined, {});
+
         expect(result).toEqual(initialState);
 
     })
@@ -22,12 +31,6 @@ describe('state', () => {
             user: 'forehead Taylor'
         }
 
-        const initialState = {
-            error: null,
-            isLoading: false,
-            isAuthenticated: false,
-            details: null
-        }
         const nextState = state(initialState, action);
 
         expect(nextState).toEqual(
@@ -38,8 +41,7 @@ describe('state', () => {
                 isLoading: false
             }
         );
-
-    })
+    });
 
     it('should show status of login request', () => {
         const action = {
@@ -53,6 +55,7 @@ describe('state', () => {
             isAuthenticated: false,
             details: null
         }
+
         const nextState = state(initialState, action);
 
         expect(nextState).toEqual(
@@ -63,8 +66,7 @@ describe('state', () => {
                 isLoading: true
             }
         );
-
-    })
+    });
 
     it('should show status of login response', () => {
         const action = {
@@ -72,12 +74,6 @@ describe('state', () => {
             error: 'Please try again'
         }
 
-        const initialState = {
-            error: null,
-            isLoading: false,
-            isAuthenticated: false,
-            details: null
-        }
         const nextState = state(initialState, action);
         
         expect(nextState).toEqual(
@@ -86,10 +82,8 @@ describe('state', () => {
                 error: 'Please try again',
                 isLoading: false
             }
-        )
-        )
-
-    })
+        ));
+    });
 
     it('should show status of logout', () => {
         const action = {
@@ -110,7 +104,75 @@ describe('state', () => {
             isLoading: false,
             isAuthenticated: false,
             details: null
-        })
+        });
+    });
 
-    })
-})
+    it('Should update user profile information', () => {
+
+        const userDetails = {
+            name: 'Taylor',
+            description: 'I love couches',
+            email: 'taylor@couch.com',
+            address: '123 ABC Street City, State 12345'
+        }
+
+        const action = {
+            type: UPDATE_USER,
+            details: userDetails
+        }
+
+        const result = state(initialState, action)
+        
+        expect(result.details).toEqual({
+            name: 'Taylor',
+            description: 'I love couches',
+            email: 'taylor@couch.com',
+            address: '123 ABC Street City, State 12345'
+        });
+    });
+
+    // it('Should update state with a user\'s order history', () => {
+    //     const initialState = {
+    //         error: null,
+    //         isLoading: false,
+    //         isAuthenticated: true,
+    //         details: null
+    //     }
+
+    //     const orderHistory = [
+    //         {
+    //           id: 1,
+    //           image: 'images/crate-broken.png',
+    //           name: 'A Thing!',
+    //           description: "It's a thing!",
+    //           purchased: true
+    //         },
+    //         {
+    //           id: 2,
+    //           image: 'images/crate-broken.png',
+    //           name: 'A Different Thing!',
+    //           description: "It's a thing!",
+    //           purchased: false
+    //         },
+    //         {
+    //             id: 3,
+    //             image: 'images/crate-broken.png',
+    //             name: 'A Third Thing!',
+    //             description: "It's a thing!",
+    //             purchased: true
+    //           }
+    //     ]
+
+    //     const action = {
+    //         type: LOAD_HISTORY,
+    //         history: orderHistory
+    //     }
+
+    //     const expected = orderHistory
+    //     const result = state(initialState, action)
+
+    //     expect(result).toEqual({
+
+    //     })
+    // })
+});
