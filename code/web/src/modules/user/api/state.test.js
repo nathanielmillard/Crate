@@ -1,5 +1,5 @@
 import state from './state.js'
-import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, UPDATE_USER } from './actions'
+import { SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT, UPDATE_USER, LOAD_HISTORY } from './actions'
 import '@testing-library/jest-dom'
 
 describe('state', () => {
@@ -130,7 +130,7 @@ describe('state', () => {
         }
 
         const action = {
-            type: 'UPDATE_USER',
+            type: UPDATE_USER,
             details: userDetails
         }
 
@@ -143,4 +143,49 @@ describe('state', () => {
             address: '123 ABC Street City, State 12345'
         })
     })
+
+    // it('Should update state with a user\'s order history', () => {
+    //     const initialState = {
+    //         error: null,
+    //         isLoading: false,
+    //         isAuthenticated: true,
+    //         details: null
+    //     }
+
+    //     const orderHistory = [
+    //         {
+    //           id: 1,
+    //           image: 'images/crate-broken.png',
+    //           name: 'A Thing!',
+    //           description: "It's a thing!",
+    //           purchased: true
+    //         },
+    //         {
+    //           id: 2,
+    //           image: 'images/crate-broken.png',
+    //           name: 'A Different Thing!',
+    //           description: "It's a thing!",
+    //           purchased: false
+    //         },
+    //         {
+    //             id: 3,
+    //             image: 'images/crate-broken.png',
+    //             name: 'A Third Thing!',
+    //             description: "It's a thing!",
+    //             purchased: true
+    //           }
+    //     ]
+
+    //     const action = {
+    //         type: LOAD_HISTORY,
+    //         history: orderHistory
+    //     }
+
+    //     const expected = orderHistory
+    //     const result = state(initialState, action)
+
+    //     expect(result).toEqual({
+
+    //     })
+    // })
 })
