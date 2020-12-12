@@ -5,13 +5,14 @@ import cookie from 'js-cookie'
 
 // App Imports
 import { routeApi } from '../../../setup/routes'
-
+import {APP_URL} from '../../../setup/config/env.js'
 // Actions Types
 export const LOGIN_REQUEST = 'AUTH/LOGIN_REQUEST'
 export const LOGIN_RESPONSE = 'AUTH/LOGIN_RESPONSE'
 export const SET_USER = 'AUTH/SET_USER'
 export const LOGOUT = 'AUTH/LOGOUT'
-
+export const LOAD_HISTORY = 'LOAD_HISTORY'
+export const UPDATE_USER = 'UPDATE_USER'
 // Actions
 
 // Set a user after login or using localStorage token
@@ -71,7 +72,6 @@ export function loginSetUserLocalStorageAndCookie(token, user) {
   // Update token
   window.localStorage.setItem('token', token)
   window.localStorage.setItem('user', JSON.stringify(user))
-
   // Set cookie for SSR
   cookie.set('auth', { token, user }, { path: '/' })
 }
@@ -103,7 +103,6 @@ export function logoutUnsetUserLocalStorageAndCookie() {
   // Remove token
   window.localStorage.removeItem('token')
   window.localStorage.removeItem('user')
-
   // Remove cookie
   cookie.remove('auth')
 }
@@ -116,4 +115,52 @@ export function getGenders() {
       fields: ['id', 'name']
     }))
   }
+}
+
+//Load User History
+export function loadHistory() {
+  return dispatch => {
+    dispatch({
+      orderHistory: [
+        {
+          id: 1,
+          image: `${APP_URL}/images/crate-broken.png`,
+          name: 'A Thing!',
+          description: "It's a thing!",
+          purchased: true
+        },
+        {
+          id: 2,
+          image: `${APP_URL}/images/crate-broken.png`,
+          name: 'A Different Thing!',
+          description: "It's a thing!",
+          purchased: false
+        },
+        {
+          id: 3,
+          image: `${APP_URL}/images/crate-broken.png`,
+          name: 'A Third Thing!',
+          description: "It's a thing!",
+          purchased: true
+        }
+      ],
+      type: 'LOAD_HISTORY'
+    })
+  }
+  //I want to mock user history of products here
+  //This would ideally be a fetch request updating the user's history
+  //But we don't currently have that on our BE
+  //Maybe won't get it.
+}
+
+export function updateUserInfo(state) {
+  return dispatch => {
+    dispatch({
+      details: state,
+      type: 'UPDATE_USER'
+    })
+  }
+  //take in state
+  //fire a reducer to add state details to local user details
+  //when/if we get a back end this would fire a post request to the API
 }
