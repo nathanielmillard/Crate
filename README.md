@@ -2,12 +2,53 @@
 
 # Crate 👕👖📦
 
+
 #### Get monthly subscription of trendy clothes and accessories.
 - **API** built with Node, GraphQL, Express, Sequelize (MySQL) and JWT Auth
 - **WebApp** built with React and Redux along with Server Side Rendering (SSR) / SEO friendly
 - **Mobile** (Android and iOS) Native App build with React Native
 - Written in ES6+ using Babel + Webpack
 - Designed using Adobe Experience Design. Preview it [here](https://xd.adobe.com/view/a662a49f-57e7-4ffd-91bd-080b150b0317/).
+
+## Contributors
+<br>
+In no particular order...
+<br><br>
+
+Ashley McDonald
+[<img align="left" alt="ashley github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-ashley]
+[<img align="left" alt="ashley linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-ashley]
+<br />
+<br>
+Eric Hale
+[<img align="left" alt="eric github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-eric]
+[<img align="left" alt="eric linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-eric]
+<br />
+<br>
+Tyler Fields
+[<img align="left" alt="tyler github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-tyler]
+[<img align="left" alt="tyler linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-tyler]
+<br />
+<br>
+Kathryn Jackson
+[<img align="left" alt="kj github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-kj]
+[<img align="left" alt="kj linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-kj]
+<br />
+<br>
+Nathaniel Millard
+[<img align="left" alt="nathaniel github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-nath]
+[<img align="left" alt="nathaniel linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-nath]
+<br />
+<br>
+Stacy Potten
+[<img align="left" alt="stacy github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-stac]
+[<img align="left" alt="stacy linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-stac]
+<br />
+<br>
+Travis McKinstry
+[<img align="left" alt="corey github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-travis]
+[<img align="left" alt="corey linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-travis]
+<br />
 
 
 ## Features
@@ -150,47 +191,6 @@ Click on image to view fullscreen and zoom
 - Comparing with any other languague, you usually start with a framework, for example, Laravel (PHP), Django (Python) or Ruby on Rails (Ruby) which includes a ton of features and codebase which you never end up using.
 - I've personally found, learning by going through a good project codebase step by step while building your own project helps in ease of understanding and remembering
 
-
-
-## Contributors
-<br>
-In no particular order...
-<br><br>
-
-Ashley McDonald
-[<img align="left" alt="ashley github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-ashley]
-[<img align="left" alt="ashley linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-ashley]
-<br />
-<br>
-Eric Hale
-[<img align="left" alt="eric github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-eric]
-[<img align="left" alt="eric linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-eric]
-<br />
-<br>
-Tyler Fields
-[<img align="left" alt="tyler github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-tyler]
-[<img align="left" alt="tyler linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-tyler]
-<br />
-<br>
-Kathryn Jackson
-[<img align="left" alt="kj github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-kj]
-[<img align="left" alt="kj linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-kj]
-<br />
-<br>
-Nathaniel Millard
-[<img align="left" alt="nathaniel github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-nath]
-[<img align="left" alt="nathaniel linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-nath]
-<br />
-<br>
-Stacy Potten
-[<img align="left" alt="stacy github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-stac]
-[<img align="left" alt="stacy linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-stac]
-<br />
-<br>
-Travis McKinstry
-[<img align="left" alt="corey github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-travis]
-[<img align="left" alt="corey linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-travis]
-<br />
 
 [git-ashley]: https://github.com/aemcdonald
 [linkedin-ashley]: https://www.linkedin.com/in/aemcdonald/
