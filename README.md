@@ -26,7 +26,7 @@ This project adds additional functionality to a legacy codebase. Crate is an ope
 
 [Nathaniel Millard](https://github.com/nathanielmillard)
 
-[Stacy Potten](https://github.com/travisgm92)
+[Stacy Potten](https://github.com/stacyp2006)
 
 
 #### Get monthly subscription of trendy clothes and accessories.
