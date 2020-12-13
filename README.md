@@ -12,6 +12,65 @@ This project adds additional functionality to a legacy codebase. Crate is an ope
 - Apply strategies for reading and evaluating documentation
 
 
+## Contributors
+
+<br>
+Tyler Fields
+[<img align="left" alt="tyler github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-tyler]
+[<img align="left" alt="tyler linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-tyler]
+<br />
+<br>
+Eric Hale
+[<img align="left" alt="eric github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-eric]
+[<img align="left" alt="eric linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-eric]
+<br />
+<br>
+Kathryn Jackson
+[<img align="left" alt="kj github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-kj]
+[<img align="left" alt="kj linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-kj]
+<br />
+Ashley McDonald
+[<img align="left" alt="ashley github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-ashley]
+[<img align="left" alt="ashley linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-ashley]
+<br />
+<br>
+Travis McKinstry
+[<img align="left" alt="corey github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-travis]
+[<img align="left" alt="corey linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-travis]
+<br />
+<br>
+Nathaniel Millard
+[<img align="left" alt="nathaniel github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-nath]
+[<img align="left" alt="nathaniel linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-nathaniel]
+<br />
+<br>
+Stacy Potten
+[<img align="left" alt="stacy github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-stac]
+[<img align="left" alt="stacy linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-stacy]
+<br />
+
+[git-tyler]: https://github.com/fieldstyler
+[linkedin-tyler]: https://www.linkedin.com/in/tyler-fields-583084197/
+
+[git-eric]: https://github.com/EHale64
+[linkedin-eric]: https://www.linkedin.com/in/eric-hale-656843155/
+
+[git-kj]: https://github.com/kathrynljackson
+[linkedin-kj]: https://www.linkedin.com/in/kathrynlorrainej/
+
+[git-ashley]: https://github.com/aemcdonald
+[linkedin-ashley]: https://www.linkedin.com/in/aemcdonald/
+
+[git-travis]: https://github.com/travisgm92
+[linkedin-travis]: https://www.linkedin.com/in/travis-mckinstry/
+
+[git-nath]: https://github.com/nathanielmillard
+[linkedin-nathaniel]: https://www.linkedin.com/in/nathanielmillard/
+
+[git-stac]: https://github.com/stacyp2006
+[linkedin-stacy]: https://www.linkedin.com/in/stacy-potten/
+
+
 #### Get monthly subscription of trendy clothes and accessories.
 - **API** built with Node, GraphQL, Express, Sequelize (MySQL) and JWT Auth
 - **WebApp** built with React and Redux along with Server Side Rendering (SSR) / SEO friendly
@@ -159,72 +218,6 @@ Click on image to view fullscreen and zoom
 - While building a new project with Node, you can basically start scratch, adding libraries and tools as you go on building it further.
 - Comparing with any other languague, you usually start with a framework, for example, Laravel (PHP), Django (Python) or Ruby on Rails (Ruby) which includes a ton of features and codebase which you never end up using.
 - I've personally found, learning by going through a good project codebase step by step while building your own project helps in ease of understanding and remembering
-
-
-
-## Contributors
-<br>
-In no particular order...
-<br><br>
-
-Ashley McDonald
-[<img align="left" alt="ashley github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-ashley]
-[<img align="left" alt="ashley linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-ashley]
-<br />
-<br>
-Eric Hale
-[<img align="left" alt="eric github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-eric]
-[<img align="left" alt="eric linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-eric]
-<br />
-<br>
-Tyler Fields
-[<img align="left" alt="tyler github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-tyler]
-[<img align="left" alt="tyler linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-tyler]
-<br />
-<br>
-Kathryn Jackson
-[<img align="left" alt="kj github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-kj]
-[<img align="left" alt="kj linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-kj]
-<br />
-<br>
-Nathaniel Millard
-[<img align="left" alt="nathaniel github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-nath]
-[<img align="left" alt="nathaniel linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-nath]
-<br />
-<br>
-Stacy Potten
-[<img align="left" alt="stacy github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-stac]
-[<img align="left" alt="stacy linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-stac]
-<br />
-<br>
-Travis McKinstry
-[<img align="left" alt="corey github" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][git-travis]
-[<img align="left" alt="corey linkedin' | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin-travis]
-<br />
-
-[git-ashley]: https://github.com/aemcdonald
-[linkedin-ashley]: https://www.linkedin.com/in/aemcdonald/
-
-[git-eric]: https://github.com/EHale64
-[linkedin-eric]: https://www.linkedin.com/in/eric-hale-656843155/
-
-[git-kj]: https://github.com/kathrynljackson
-[linkedin-kj]: https://www.linkedin.com/in/kathrynlorrainej/
-
-[git-tyler]: https://github.com/fieldstyler
-[linkedin-tyler]: https://www.linkedin.com/in/tyler-fields-583084197/
-
-
-[git-nath]: https://github.com/nathanielmillard
-[linkedin-nath]: https://www.linkedin.com/in/nathanielmillard/
-
-
-[git-stac]: https://github.com/stacyp2006
-[linkedin-stac]: https://www.linkedin.com/in/stacy-potten/
-
-
-[git-travis]: https://github.com/travisgm92
-[linkedin-travis]: https://www.linkedin.com/in/travis-mckinstry/
 
 
 ## License
