@@ -2,6 +2,15 @@
 
 # Crate 👕👖📦
 
+This project adds additional functionality to a legacy codebase. Crate is an open source project that allows users to receive monthly subscriptions for clothing and accessories based on their preferences. As a full-stack group, we were tasked with exploring the codebase and integrating new functionality that allows a user to update their profile information, view products they have purchased and returned from their monthly subscriptions and edit their subscription delivery dates.
+
+
+## Learning Goals
+- Develop and apply strategies for analyzing a large, existing code base
+- Explore and implement new concepts, patterns and libraries that we are unfamiliar with
+- Practice an advanced, professional git workflow on a full-stack team of seven members
+- Apply strategies for reading and evaluating documentation
+
 
 #### Get monthly subscription of trendy clothes and accessories.
 - **API** built with Node, GraphQL, Express, Sequelize (MySQL) and JWT Auth
