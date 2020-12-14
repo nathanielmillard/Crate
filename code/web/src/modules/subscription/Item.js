@@ -33,6 +33,7 @@ class Item extends PureComponent {
   }
 
   updateDelivery = () => {
+    console.log('hello', this.state.deliveryDate)
     this.props.updateDeliveryDate(this.state.deliveryDate)
   }
 
@@ -72,7 +73,7 @@ class Item extends PureComponent {
   }
 
   render() {
-    const { id, crate, createdAt, deliveryDate } = this.props.subscription
+    const { id, crate, createdAt } = this.props.subscription
     const { isLoading } = this.state
 
     return (
@@ -101,7 +102,7 @@ class Item extends PureComponent {
             Subscribed on { new Date(parseInt(createdAt)).toDateString() }
           </p>
           <p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>
-            Estimated Delivery Date: {deliveryDate || "You do not have a delivery scheduled."} 
+            Estimated Delivery Date: {this.state.deliveryDate || "You do not have a delivery scheduled."} 
             <input
               type='date'
               onChange={event => this.saveDate(event)}
@@ -128,7 +129,8 @@ Item.propTypes = {
 // Component State
 function itemState(state) {
   return {
-    user: state.user
+    user: state.user, 
+    deliveryDate: state.deliveryDate
   }
 }
 
