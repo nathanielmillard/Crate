@@ -15,6 +15,7 @@ export const SUBSCRIPTIONS_GET_LIST_BY_USER_FAILURE = 'SUBSCRIPTIONS/GET_LIST_BY
 export const SUBSCRIPTIONS_GET_REQUEST = 'SUBSCRIPTIONS/GET_REQUEST'
 export const SUBSCRIPTIONS_GET_RESPONSE = 'SUBSCRIPTIONS/GET_RESPONSE'
 export const SUBSCRIPTIONS_GET_FAILURE = 'SUBSCRIPTIONS/GET_FAILURE'
+export const SUBSCRIPTIONS_UPDATE_DELIVERY_DATE = 'SUBSCRIPTIONS/UPDATE_DELIVERY_DATE'
 
 // Actions
 
@@ -139,5 +140,15 @@ export function remove(variables) {
       variables,
       fields: ['id']
     }))
+  }
+}
+
+// Update delivery date
+export function updateDeliveryDate(deliveryDate) {
+  return dispatch => {
+    dispatch({
+      type: 'UPDATE_DELIVERY_DATE',
+      deliveryDate
+    })
   }
 }

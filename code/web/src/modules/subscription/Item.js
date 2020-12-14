@@ -14,7 +14,7 @@ import { white, grey2, black } from '../../ui/common/colors'
 // App Imports
 import { APP_URL } from '../../setup/config/env'
 import { messageShow, messageHide } from '../common/api/actions'
-import { remove, getListByUser } from '../subscription/api/actions'
+import { remove, getListByUser, updateDeliveryDate } from '../subscription/api/actions'
 
 // Component
 class Item extends PureComponent {
@@ -23,8 +23,18 @@ class Item extends PureComponent {
     super(props)
 
     this.state = {
-      isLoading: false
+      isLoading: false, 
+      deliveryDate: ''
     }
+  }
+  
+  saveDate = (event) => {
+    this.setState({deliveryDate: event.target.value})
+  }
+
+  updateDelivery = () => {
+    console.log('hello', this.state.deliveryDate)
+    this.props.updateDeliveryDate(this.state.deliveryDate)
   }
 
   onClickUnsubscribe = (id) => {
@@ -92,10 +102,12 @@ class Item extends PureComponent {
             Subscribed on { new Date(parseInt(createdAt)).toDateString() }
           </p>
           <p style={{ color: grey2, marginTop: '1em', fontSize: '0.8em', textAlign: 'center' }}>
-            Estimated Delivery Date: XX/XX/XXXX 
+            Estimated Delivery Date: {this.state.deliveryDate || "You do not have a delivery scheduled."} 
             <input
               type='date'
+              onChange={event => this.saveDate(event)}
             />
+            <button type='submit' onClick={this.updateDelivery}>Submit</button>
           </p>
         </div>
       </Card>
@@ -109,6 +121,7 @@ Item.propTypes = {
   user: PropTypes.object.isRequired,
   remove: PropTypes.func.isRequired,
   getListByUser: PropTypes.func.isRequired,
+  updateDeliveryDate: PropTypes.func, 
   messageShow: PropTypes.func.isRequired,
   messageHide: PropTypes.func.isRequired
 }
@@ -116,8 +129,9 @@ Item.propTypes = {
 // Component State
 function itemState(state) {
   return {
-    user: state.user
+    user: state.user, 
+    deliveryDate: state.deliveryDate
   }
 }
 
-export default connect(itemState, { remove, getListByUser, messageShow, messageHide })(withRouter(Item))
+export default connect(itemState, { remove, getListByUser, messageShow, messageHide, updateDeliveryDate })(withRouter(Item))

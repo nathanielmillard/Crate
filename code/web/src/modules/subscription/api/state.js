@@ -11,6 +11,7 @@ import {
   SUBSCRIPTIONS_GET_REQUEST,
   SUBSCRIPTIONS_GET_RESPONSE,
   SUBSCRIPTIONS_GET_FAILURE,
+  SUBSCRIPTIONS_UPDATE_DELIVERY_DATE,
 } from './actions'
 
 // Subscriptions list
@@ -46,7 +47,7 @@ export const subscriptions = (state = subscriptionsInitialState, action) => {
         isLoading: false,
         error: action.error
       }
-
+    
     default:
       return state
   }
@@ -65,7 +66,7 @@ const subscriptionsByUserInitialState = {
 export const subscriptionsByUser = (state = subscriptionsByUserInitialState, action) => {
   switch (action.type) {
     case SUBSCRIPTIONS_GET_LIST_BY_USER_REQUEST:
-      return {
+    return {
         ...state,
         isLoading: action.isLoading,
         error: null
@@ -85,7 +86,7 @@ export const subscriptionsByUser = (state = subscriptionsByUserInitialState, act
         isLoading: false,
         error: action.error
       }
-
+    
     default:
       return state
   }
@@ -123,6 +124,16 @@ export const subscription = (state = subscriptionInitialState, action) => {
         ...state,
         isLoading: false,
         error: action.error
+      }
+
+// This reducer is intended to update the store with a new delivery date. While the action fires and the component state updates, the reducer doesn't update the state. 
+
+    case SUBSCRIPTIONS_UPDATE_DELIVERY_DATE: 
+      return {
+        ...state, 
+        isLoading: false, 
+        error: null, 
+        deliveryDate: action.deliveryDate
       }
 
     default:
